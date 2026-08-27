@@ -112,13 +112,6 @@ function Hero() {
       <div className="relative flex min-h-0 flex-1 items-center px-[30px] pb-10 md:px-0 md:pb-0">
         <div className="flex w-full flex-col items-center gap-8 md:flex-row md:items-center md:justify-evenly md:gap-0 md:-translate-y-12">
           <div className="order-2 relative z-10 w-full min-w-0 max-w-lg md:order-1 md:w-auto md:max-w-xl md:shrink-0">
-            <div className="mb-5 flex flex-wrap items-center gap-2">
-              <span className="pill">
-                <span className="inline-block h-2 w-2 rounded-full bg-sage ring-2 ring-sage/25" />
-                Nuneaton, Warwickshire
-              </span>
-            </div>
-
             <h1 className="font-display text-[9vw] leading-[0.92] tracking-[-0.01em] md:text-[5.5vw]">
               <span className="italic text-sage-deep">Bespoke cakes</span> in Nuneaton
             </h1>
@@ -152,7 +145,7 @@ function Hero() {
                 }}
                 className="group flex min-h-[5.25rem] flex-1 flex-col justify-between rounded-2xl bg-sage-deep px-4 py-3.5 text-primary-foreground shadow-sm transition-all duration-300 hover:bg-sage-deep/90 hover:shadow-md md:px-4 md:py-4"
               >
-                <span className="text-sm font-semibold leading-tight">Enquire now</span>
+                <span className="text-lg font-semibold leading-none">Enquire</span>
                 <span className="text-[10px] uppercase tracking-[0.14em] text-primary-foreground/75 transition-colors group-hover:text-primary-foreground">
                   Get a quote →
                 </span>
@@ -160,7 +153,7 @@ function Hero() {
             </div>
           </div>
 
-          <div className="order-1 pointer-events-none relative z-0 mx-auto aspect-[3/4] w-[62vw] max-w-[300px] shrink-0 overflow-visible md:order-2 md:mx-0 md:w-[40vw] md:max-w-[420px]">
+          <div className="order-1 pointer-events-none relative z-0 mx-auto mt-2 aspect-[3/4] w-[62vw] max-w-[300px] shrink-0 overflow-visible md:order-2 md:mx-0 md:mt-0 md:w-[40vw] md:max-w-[420px]">
             <div
               className="absolute top-[10%] z-0 aspect-[3/4] w-[54%] -left-[10%] md:w-[64%] md:-left-[32%]"
               aria-hidden
