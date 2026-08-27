@@ -10,7 +10,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import bobaMedium from "../assets/Boba-Medium.otf?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { getRequestOrigin } from "../lib/origin.functions";
 import {
@@ -88,20 +87,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: `${SITE_NAME} — Handmade Cookies, Brownies & Sweet Treats` },
+        { title: `${SITE_NAME} — Celebration Cakes, Wedding Cakes & Cupcakes` },
         { name: "description", content: SITE_DESCRIPTION },
-        { name: "theme-color", content: "#6F9B7A" },
+        { name: "theme-color", content: "#8B4A52" },
         { property: "og:site_name", content: SITE_NAME },
         { property: "og:title", content: `${SITE_NAME} — ${SITE_TAGLINE}` },
         { property: "og:description", content: SITE_DESCRIPTION },
         { property: "og:type", content: "website" },
         { property: "og:image", content: ogImage },
-        { property: "og:image:alt", content: "Freshly baked cookies from BakEM Bakery" },
+        { property: "og:image:alt", content: "Custom celebration cake from Ivory Rose Cake Company" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: `${SITE_NAME} — ${SITE_TAGLINE}` },
         { name: "twitter:description", content: SITE_DESCRIPTION },
         { name: "twitter:image", content: ogImage },
-        { name: "twitter:image:alt", content: "Freshly baked cookies from BakEM Bakery" },
+        { name: "twitter:image:alt", content: "Custom celebration cake from Ivory Rose Cake Company" },
       ],
       links: [
         {
@@ -116,7 +115,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap",
         },
       ],
     };
@@ -132,13 +131,6 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        <link
-          rel="preload"
-          href={bobaMedium}
-          as="font"
-          type="font/otf"
-          crossOrigin="anonymous"
-        />
       </head>
       <body>
         {children}

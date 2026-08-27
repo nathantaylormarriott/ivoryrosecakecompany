@@ -1,9 +1,9 @@
 export const SHARE_PAGE_DESCRIPTION =
-  "Handmade bakes for every occasion — custom cookies, cookie cakes, brownie bites and sweet treats from the BakEM Bake Shed, Hayloft Way CV11 7AQ.";
+  "Bespoke celebration cakes, wedding cakes and cupcakes from Ivory Rose Cake Company in Nuneaton, Warwickshire.";
 
 export const SHARE_PAGE_META = {
-  title: "BakEM Bakery · Links",
-  ogTitle: "BakEM Bakery — Handmade Bakes for Every Occasion",
+  title: "Ivory Rose Cake Company · Links",
+  ogTitle: "Ivory Rose Cake Company — Bespoke Cakes for Every Celebration",
   description: SHARE_PAGE_DESCRIPTION,
   ogUrl: "/share",
 } as const;

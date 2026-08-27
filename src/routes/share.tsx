@@ -3,19 +3,18 @@ import { useState, type ComponentType, type FormEvent, type ReactNode } from "re
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import {
   ArrowRight,
+  Cake,
   ChevronDown,
-  Cookie,
-  CreditCard,
   Globe,
   Mail,
   MapPin,
+  Phone,
   Send,
   ShieldCheck,
   Star,
-  Store,
 } from "lucide-react";
-import { BakEMLogo } from "@/components/BakEMLogo";
-import { FacebookIcon, InstagramIcon, TikTokIcon } from "@/components/SocialIcons";
+import { IvoryRoseLogo } from "@/components/IvoryRoseLogo";
+import { FacebookIcon, InstagramIcon } from "@/components/SocialIcons";
 import { BUSINESS, SOCIAL } from "@/data/menu";
 import {
   NETLIFY_FORM_ENDPOINT,
@@ -198,9 +197,8 @@ function ShareContactForm() {
 }
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: SOCIAL.instagram, Icon: InstagramIcon },
-  { label: "TikTok", href: SOCIAL.tiktok, Icon: TikTokIcon },
   { label: "Facebook", href: SOCIAL.facebook, Icon: FacebookIcon },
+  { label: "Instagram", href: SOCIAL.instagram, Icon: InstagramIcon },
 ] as const;
 
 export const Route = createFileRoute("/share")({
@@ -213,13 +211,13 @@ export const Route = createFileRoute("/share")({
       meta: [
         { title: SHARE_PAGE_META.title },
         { name: "description", content: SHARE_PAGE_META.description },
-        { property: "og:site_name", content: "BakEM Bakery" },
+        { property: "og:site_name", content: "Ivory Rose Cake Company" },
         { property: "og:title", content: SHARE_PAGE_META.ogTitle },
         { property: "og:description", content: SHARE_PAGE_META.description },
         { property: "og:type", content: "website" },
         { property: "og:url", content: shareUrl },
         { property: "og:image", content: ogImage },
-        { property: "og:image:alt", content: "Freshly baked cookies from BakEM Bakery" },
+        { property: "og:image:alt", content: "Custom celebration cake from Ivory Rose Cake Company" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: SHARE_PAGE_META.ogTitle },
         { name: "twitter:description", content: SHARE_PAGE_META.description },
@@ -239,9 +237,9 @@ function SharePage() {
       <main className="relative z-10 mx-auto flex min-h-[100dvh] w-full max-w-md flex-col px-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-[max(1.5rem,env(safe-area-inset-top))] sm:px-6 md:py-8">
         <div className="flex flex-1 flex-col overflow-hidden rounded-[2rem] border border-border bg-milk/95 p-6 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.12)] backdrop-blur-sm sm:p-8">
           <header className="text-center">
-            <BakEMLogo className="mx-auto items-center justify-center" />
+            <IvoryRoseLogo className="mx-auto items-center justify-center" />
             <p className="mx-auto mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              {BUSINESS.tagline} — custom cookies &amp; sweet treats from the BakEM Bake Shed, Hayloft Way.
+              {BUSINESS.tagline} — bespoke celebration cakes, wedding tiers and cupcakes from Nuneaton.
             </p>
             <nav className="mt-5 flex items-center justify-center gap-1" aria-label="Social links">
               {SOCIAL_LINKS.map(({ label, href, Icon }) => (
@@ -260,11 +258,12 @@ function SharePage() {
           </header>
 
           <nav className="mt-8 flex flex-1 flex-col gap-2.5" aria-label="Quick links">
-            <ShareLinkButton label="Visit the bakery" href="/" icon={Globe} animatedArrow />
-            <ShareLinkButton label="View the menu" href="/#menu" icon={Cookie} />
-            <ShareLinkButton label="Find the Bake Shed" href="/#visit" icon={Store} />
+            <ShareLinkButton label="Visit our website" href="/" icon={Globe} animatedArrow />
+            <ShareLinkButton label="View our services" href="/#menu" icon={Cake} />
+            <ShareLinkButton label="See our gallery" href="/#gallery" icon={Star} />
             <ShareLinkButton label="Get directions" href={directionsUrl} external icon={MapPin} />
-            <ShareLinkButton label="How to pay" href="/#payment" icon={CreditCard} />
+            <ShareLinkButton label="Call us" href={BUSINESS.phoneHref} external icon={Phone} />
+            <ShareLinkButton label="How to order" href="/#order" icon={Mail} />
             <ShareLinkButton label="Allergen info" href="/#allergens" icon={ShieldCheck} />
             <ShareLinkButton
               label={`Google reviews · ${BUSINESS.rating}`}
