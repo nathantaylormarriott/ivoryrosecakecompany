@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { IvoryRoseLogo } from "@/components/IvoryRoseLogo";
 import { FacebookIcon, InstagramIcon } from "@/components/SocialIcons";
 import { SmoothScroll, scrollToSection } from "@/components/SmoothScroll";
+import { LOCAL_SEO } from "@/lib/local-seo";
 import {
   MENU,
   REVIEWS,
@@ -22,18 +23,22 @@ import childrensCarsCake from "@/assets/childrens-cars-cake.jpg";
 import celebrationHeartBaby from "@/assets/celebration-heart-baby.jpg";
 import celebrationWhite60 from "@/assets/celebration-white-60.jpg";
 import giftBoxCupcakes from "@/assets/gift-box-cupcakes.jpg";
+import childrensSchoolCake from "@/assets/childrens-school-cake.jpg";
+import childrensKpopCake from "@/assets/childrens-kpop-cake.jpg";
+import childrensPeppaCake from "@/assets/childrens-peppa-cake.jpg";
+import celebrationBlue80 from "@/assets/celebration-blue-80.jpg";
+import gamingBirthdayCake from "@/assets/gaming-birthday-cake.jpg";
 
+/** Gallery-only images — not used in hero, story, menu, order or allergen sections */
 const GALLERY = [
-  { src: heroCake, alt: "Yellow celebration cake with macarons and gold topper" },
-  { src: celebrationBurgundy, alt: "Ivory and burgundy floral two-tier celebration cake" },
-  { src: weddingCake, alt: "Elegant wedding cake with purple sugar roses" },
-  { src: cupcakesSage, alt: "Box of ivory and sage green floral cupcakes" },
-  { src: cupcakesPink, alt: "Luxury pink and gold birthday cupcakes" },
-  { src: celebrationBig50, alt: "Ivory and pink 50th birthday cake" },
-  { src: childrensCarsCake, alt: "Custom Cars themed children's birthday cake" },
-  { src: celebrationHeartBaby, alt: "Heart-shaped baby shower cake with baby's breath" },
+  { src: cupcakesPink, alt: "Luxury pink and gold birthday cupcakes from a Nuneaton cake maker" },
   { src: celebrationWhite60, alt: "White fondant 60th birthday cake with sugar flowers" },
   { src: giftBoxCupcakes, alt: "Gift box of decorated cupcakes" },
+  { src: childrensSchoolCake, alt: "Pink first birthday school-themed children's cake" },
+  { src: childrensKpopCake, alt: "KPOP themed children's birthday cake" },
+  { src: childrensPeppaCake, alt: "Peppa Pig themed children's birthday cake" },
+  { src: celebrationBlue80, alt: "Blue ombre 80th birthday celebration cake" },
+  { src: gamingBirthdayCake, alt: "Custom gaming themed 18th birthday cake" },
 ];
 
 const MENU_IMAGES = [celebrationBurgundy, weddingCake, cupcakesSage, childrensCarsCake];
@@ -55,6 +60,7 @@ function HomePage() {
         <OrderSection />
         <AllergenSection />
         <ReviewsCarousel />
+        <LocalAreaSection />
         <VisitSection />
         <ContactSection />
       </div>
@@ -103,9 +109,9 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="relative min-h-[100dvh] overflow-x-clip flex flex-col pt-20 md:pt-24">
-      <div className="relative flex min-h-0 flex-1 items-center px-[30px] md:px-0">
-        <div className="flex w-full flex-col items-center gap-8 -translate-y-6 md:flex-row md:items-center md:justify-evenly md:gap-0 md:-translate-y-12">
-          <div className="relative z-10 w-full min-w-0 max-w-lg md:w-auto md:max-w-xl md:shrink-0">
+      <div className="relative flex min-h-0 flex-1 items-center px-[30px] pb-10 md:px-0 md:pb-0">
+        <div className="flex w-full flex-col items-center gap-8 md:flex-row md:items-center md:justify-evenly md:gap-0 md:-translate-y-12">
+          <div className="order-2 relative z-10 w-full min-w-0 max-w-lg md:order-1 md:w-auto md:max-w-xl md:shrink-0">
             <div className="mb-5 flex flex-wrap items-center gap-2">
               <span className="pill">
                 <span className="inline-block h-2 w-2 rounded-full bg-sage ring-2 ring-sage/25" />
@@ -114,28 +120,28 @@ function Hero() {
             </div>
 
             <h1 className="font-display text-[9vw] leading-[0.92] tracking-[-0.01em] md:text-[5.5vw]">
-              <span className="italic text-sage-deep">Bespoke cakes</span> for every celebration
+              <span className="italic text-sage-deep">Bespoke cakes</span> in Nuneaton
             </h1>
 
-            <div className="mt-5">
+            <div className="mt-5 hidden md:block">
               <p className="text-sm text-muted-foreground md:text-base">
-                Celebration cakes, wedding tiers, cupcakes and children&apos;s designs — handcrafted
-                with care by Ivory Rose Cake Company. Tell us your vision and we&apos;ll bring it to life.
+                Wedding cakes, birthday cakes and cupcakes from a local cake maker in Nuneaton,
+                Warwickshire. Tell us your vision and we&apos;ll bring it to life.
               </p>
             </div>
 
             <div className="mt-6 flex max-w-md gap-2.5">
               <div className="group flex min-h-[5.25rem] flex-1 flex-col justify-between rounded-2xl border border-mauve/25 bg-mauve-light px-4 py-3.5 shadow-sm transition-all duration-300 hover:border-mauve/40 hover:shadow-md md:px-4 md:py-4">
-                <span className="font-display text-lg leading-none text-foreground">Custom</span>
+                <span className="text-lg font-semibold leading-none text-foreground">Custom</span>
                 <span className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Made to order</span>
               </div>
 
               <div className="group flex min-h-[5.25rem] flex-1 flex-col justify-between rounded-2xl border border-mauve/25 bg-mauve-light px-4 py-3.5 shadow-sm transition-all duration-300 hover:border-mauve/40 hover:shadow-md md:px-4 md:py-4">
-                <span className="text-lg leading-none">
+                <span className="text-lg font-semibold leading-none">
                   <span className="font-nums text-sage-deep">5</span>
-                  <span className="font-display text-sage-deep">★</span>
+                  <span className="text-sage-deep">★</span>
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Food hygiene rated</span>
+                <span className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Hygiene rated</span>
               </div>
 
               <a
@@ -146,7 +152,7 @@ function Hero() {
                 }}
                 className="group flex min-h-[5.25rem] flex-1 flex-col justify-between rounded-2xl bg-sage-deep px-4 py-3.5 text-primary-foreground shadow-sm transition-all duration-300 hover:bg-sage-deep/90 hover:shadow-md md:px-4 md:py-4"
               >
-                <span className="font-display text-sm leading-tight">Enquire now</span>
+                <span className="text-sm font-semibold leading-tight">Enquire now</span>
                 <span className="text-[10px] uppercase tracking-[0.14em] text-primary-foreground/75 transition-colors group-hover:text-primary-foreground">
                   Get a quote →
                 </span>
@@ -154,9 +160,9 @@ function Hero() {
             </div>
           </div>
 
-          <div className="pointer-events-none relative z-0 aspect-[3/4] w-[32vw] max-w-[420px] shrink-0 overflow-visible sm:w-[36vw] md:w-[40vw]">
+          <div className="order-1 pointer-events-none relative z-0 mx-auto aspect-[3/4] w-[62vw] max-w-[300px] shrink-0 overflow-visible md:order-2 md:mx-0 md:w-[40vw] md:max-w-[420px]">
             <div
-              className="absolute -left-[24%] top-[10%] z-0 aspect-[3/4] w-[64%] sm:-left-[28%] md:-left-[32%]"
+              className="absolute top-[10%] z-0 aspect-[3/4] w-[54%] -left-[10%] md:w-[64%] md:-left-[32%]"
               aria-hidden
             >
               <div className="float-bob-reverse h-full w-full [animation-delay:-2.5s]">
@@ -168,7 +174,7 @@ function Hero() {
               </div>
             </div>
 
-            <div className="relative z-10 ml-auto h-full w-[78%]">
+            <div className="relative z-10 ml-auto h-full w-[72%] md:w-[78%]">
               <div className="float-bob h-full w-full">
                 <img
                   src={heroCake}
@@ -181,7 +187,7 @@ function Hero() {
         </div>
       </div>
 
-      <HeroMarquee className="mt-auto shrink-0" />
+      <HeroMarquee className="mt-8 shrink-0 md:mt-auto" />
     </section>
   );
 }
@@ -230,9 +236,9 @@ function StorySection() {
             <span className="italic text-sage-deep">cake</span> — a memory.
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-lg">
-            Welcome to Ivory Rose Cake Company — bespoke celebration cakes handcrafted in Nuneaton.
-            From elegant wedding tiers and milestone birthdays to playful children&apos;s designs,
-            every creation is made with artistry, precision and love.
+            Ivory Rose Cake Company is a Nuneaton cake baker specialising in custom celebration cakes,
+            wedding cakes and cupcakes across Warwickshire. From milestone birthdays to elegant wedding
+            tiers and playful children&apos;s designs, every cake is handcrafted with artistry and care.
           </p>
           <div className="mt-8 flex flex-wrap gap-2">
             {["Handcrafted", "Fully custom", "Wedding cakes", "Cupcake boxes"].map((t) => (
@@ -272,7 +278,7 @@ function GallerySection() {
             Every cake is unique — here are just a few of our recent creations.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
           {GALLERY.map((img) => (
             <div key={img.alt} className="overflow-hidden rounded-[1.25rem]">
               <img src={img.src} alt={img.alt} className="photo-frame aspect-[4/5] w-full rounded-[1.25rem]" />
@@ -295,7 +301,7 @@ function MenuSection() {
           <div>
             <span className="pill mb-4">What we make</span>
             <h2 className="font-display text-5xl md:text-7xl leading-[0.95]">
-              Cakes for every <span className="italic text-sage-deep">occasion</span>.
+              Cakes for every <span className="italic text-sage-deep">occasion</span> in Nuneaton
             </h2>
           </div>
           <a
@@ -491,6 +497,34 @@ function ReviewsCarousel() {
   );
 }
 
+function LocalAreaSection() {
+  return (
+    <section id="local" className="py-24 md:py-32 bg-milk">
+      <div className="container-tight max-w-3xl">
+        <span className="pill mb-6">Local cake maker</span>
+        <h2 className="font-display text-4xl md:text-6xl leading-[0.95]">
+          Custom cakes in <span className="italic text-sage-deep">Nuneaton</span>
+        </h2>
+        <p className="mt-6 text-lg text-muted-foreground">
+          Looking for a cake maker in Nuneaton? Ivory Rose Cake Company creates bespoke birthday cakes,
+          wedding cakes, cupcakes and celebration cakes for customers across {LOCAL_SEO.region} and
+          nearby towns. Whether you need a show-stopping wedding cake, a themed children&apos;s birthday
+          cake or a luxury cupcake box, we bake every order fresh to your brief.
+        </p>
+        <p className="mt-4 text-muted-foreground">
+          Based at {BUSINESS.address}, we welcome collection and can arrange local delivery across
+          Nuneaton and surrounding areas by appointment.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-2">
+          {LOCAL_SEO.serviceAreas.map((area) => (
+            <span key={area} className="pill">{area}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function VisitSection() {
   return (
     <section id="visit" className="py-24 md:py-32 bg-sage/30">
@@ -499,17 +533,22 @@ function VisitSection() {
           <div>
             <span className="pill mb-6">Find us</span>
             <h2 className="font-display text-5xl md:text-7xl leading-[0.95]">
-              Based in <span className="italic text-sage-deep">Nuneaton</span>.
+              Your Nuneaton <span className="italic text-sage-deep">cake baker</span>.
             </h2>
-            <dl className="mt-10 space-y-6 text-lg">
-              <div>
+            <dl className="mt-10 space-y-6 text-lg" itemScope itemType="https://schema.org/Bakery">
+              <meta itemProp="name" content={BUSINESS.fullName} />
+              <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                 <dt className="text-xs uppercase tracking-widest text-muted-foreground">Address</dt>
-                <dd className="mt-1">{BUSINESS.address}</dd>
+                <dd className="mt-1">
+                  <span itemProp="streetAddress">2 West View</span>,{" "}
+                  <span itemProp="addressLocality">Nuneaton</span>{" "}
+                  <span itemProp="postalCode">CV10 0PZ</span>
+                </dd>
               </div>
               <div>
                 <dt className="text-xs uppercase tracking-widest text-muted-foreground">Phone</dt>
                 <dd className="mt-1">
-                  <a href={BUSINESS.phoneHref} className="hover:text-sage-deep transition">
+                  <a href={BUSINESS.phoneHref} className="hover:text-sage-deep transition" itemProp="telephone">
                     {BUSINESS.phone}
                   </a>
                 </dd>

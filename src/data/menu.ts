@@ -61,7 +61,7 @@ export const REVIEWS = [
 export const BUSINESS = {
   name: "Ivory Rose",
   fullName: "Ivory Rose Cake Company",
-  tagline: "Bespoke cakes for every celebration",
+  tagline: "Bespoke cakes for every celebration in Nuneaton",
   location: "Nuneaton, Warwickshire",
   address: "2 West View, Nuneaton CV10 0PZ",
   phone: "07411 134766",

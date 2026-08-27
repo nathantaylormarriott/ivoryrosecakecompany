@@ -1,31 +1,19 @@
-function RoseMark({ className = "" }: { className?: string }) {
+import logoRose from "@/assets/logo-rose.png";
+
+function RoseMark({
+  className = "",
+  onDark = false,
+}: {
+  className?: string;
+  onDark?: boolean;
+}) {
   return (
-    <svg
-      viewBox="0 0 64 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
+    <img
+      src={logoRose}
+      alt=""
       aria-hidden
-    >
-      <path
-        d="M32 8C28 14 20 16 18 22C16 28 20 34 24 36C20 38 16 44 18 50C20 56 28 58 32 56C36 58 44 56 46 50C48 44 44 38 40 36C44 34 48 28 46 22C44 16 36 14 32 8Z"
-        stroke="currentColor"
-        strokeWidth="2.25"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M32 18C30 22 26 24 25 28C24 32 27 35 30 36C27 37 24 41 25 45C26 49 30 51 32 50C34 51 38 49 39 45C40 41 37 37 34 36C37 35 40 32 39 28C38 24 34 22 32 18Z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M32 26C31 28 29 29 28.5 31C28 33 29.5 34.5 31 35C29.5 35.5 28 37 28.5 39C29 41 31 42 32 41.5C33 42 35 41 35.5 39C36 37 34.5 35.5 33 35C34.5 34.5 36 33 35.5 31C35 29 33 28 32 26Z"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinejoin="round"
-      />
-    </svg>
+      className={`object-contain ${onDark ? "brightness-0 invert" : ""} ${className}`}
+    />
   );
 }
 
@@ -47,7 +35,10 @@ export function IvoryRoseLogo({
       aria-label="Ivory Rose Cake Company"
     >
       {showMark && (
-        <RoseMark className={compact ? "h-7 w-7" : "h-9 w-9 md:h-10 md:w-10"} />
+        <RoseMark
+          onDark={onDark}
+          className={compact ? "h-8 w-10" : "h-10 w-12 md:h-11 md:w-14"}
+        />
       )}
       <span
         className={`font-logo-serif font-semibold uppercase leading-none tracking-[0.22em] ${
@@ -67,6 +58,12 @@ export function IvoryRoseLogo({
   );
 }
 
-export function IvoryRoseMark({ className = "" }: { className?: string }) {
-  return <RoseMark className={className} />;
+export function IvoryRoseMark({
+  className = "",
+  onDark = false,
+}: {
+  className?: string;
+  onDark?: boolean;
+}) {
+  return <RoseMark className={className} onDark={onDark} />;
 }
